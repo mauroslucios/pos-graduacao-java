@@ -104,4 +104,4 @@ Engenheiro de Dados | Desenvolvedor Python/Java | Fundador da Info Service Techn
 
 GitHub: https://github.com/mauroslucios
 
-LinkedIn: https://www.linkedin.com/in/maurolucio/
+
