@@ -1,0 +1,21 @@
+# Compilação e Artefatos (Maven)
+target/
+*.jar
+*.war
+*.ear
+
+# IntelliJ IDEA
+.idea/
+*.iws
+*.iml
+*.ipr
+
+# Eclipse
+.classpath
+.project
+.settings/
+.factorypath
+
+# Sistema Operacional
+.DS_Store
+Thumbs.db
