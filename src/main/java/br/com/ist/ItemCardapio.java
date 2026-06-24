@@ -11,6 +11,17 @@ public class ItemCardapio {
 
     // Construtor padrão
     public ItemCardapio() {}
+    
+    // 2. Construtor completo (com parâmetros)
+    public ItemCardapio(long id, String nome, String descricao, double preco, double precoComDesconto, int categoria, boolean emPromocao) {
+        this.id = id;
+        this.nome = nome;
+        this.descricao = descricao;
+        this.preco = preco;
+        this.precoComDesconto = precoComDesconto;
+        this.categoria = categoria;
+        this.emPromocao = emPromocao;
+    }
 
     // Método solicitado para retornar o nome da categoria com base no ID numérico
     public String mostrarCategoria() {
