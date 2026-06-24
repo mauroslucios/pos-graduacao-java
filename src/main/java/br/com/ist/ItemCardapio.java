@@ -4,77 +4,52 @@ public class ItemCardapio {
     private long id;
     private String nome;
     private String descricao;
-    private int categoria;
     private double preco;
-    private boolean emPromocao;
     private double precoComDesconto;
+    private boolean emPromocao;
+    private int categoria;
 
     // Construtor padrão
-    public ItemCardapio() {
-    }
+    public ItemCardapio() {}
 
-    // Método para calcular a porcentagem de desconto (retorna valor entre 0.0 e 1.0)
-    public double calcularPorcentagemDesconto() {
-        if (preco <= 0) {
-            return 0.0;
+    // Método solicitado para retornar o nome da categoria com base no ID numérico
+    public String mostrarCategoria() {
+        switch (this.categoria) {
+            case 1:  return "Entradas";
+            case 2:  return "Pratos principais";
+            case 3:  return "Sobremesas";
+            case 4:  return "Bebidas";
+            default: return "Categoria não encontrada...";
         }
-        return (preco - precoComDesconto) / preco;
     }
 
-    // Getters e Setters
-    public long getId() {
-        return id;
+    // Método para calcular a porcentagem de desconto para evitar erros na main
+    public double calcularPorcentagemDesconto() {
+        if (preco > 0 && emPromocao) {
+            return (preco - precoComDesconto) / preco;
+        }
+        return 0.0;
     }
 
-    public void setId(long id) {
-        this.id = id;
-    }
+    // Getters e Setters necessários para a classe App
+    public long getId() { return id; }
+    public void setId(long id) { this.id = id; }
 
-    public String getNome() {
-        return nome;
-    }
+    public String getNome() { return nome; }
+    public void setNome(String nome) { this.nome = nome; }
 
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
+    public String getDescricao() { return descricao; }
+    public void setDescricao(String descricao) { this.descricao = descricao; }
 
-    public String getDescricao() {
-        return descricao;
-    }
+    public double getPreco() { return preco; }
+    public void setPreco(double preco) { this.preco = preco; }
 
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
-    }
+    public double getPrecoComDesconto() { return precoComDesconto; }
+    public void setPrecoComDesconto(double precoComDesconto) { this.precoComDesconto = precoComDesconto; }
 
-    public int getCategoria() {
-        return categoria;
-    }
+    public boolean isEmPromocao() { return emPromocao; }
+    public void setEmPromocao(boolean emPromocao) { this.emPromocao = emPromocao; }
 
-    public void setCategoria(int categoria) {
-        this.categoria = categoria;
-    }
-
-    public double getPreco() {
-        return preco;
-    }
-
-    public void setPreco(double preco) {
-        this.preco = preco;
-    }
-
-    public boolean isEmPromocao() {
-        return emPromocao;
-    }
-
-    public void setEmPromocao(boolean emPromocao) {
-        this.emPromocao = emPromocao;
-    }
-
-    public double getPrecoComDesconto() {
-        return precoComDesconto;
-    }
-
-    public void setPrecoComDesconto(double precoComDesconto) {
-        this.precoComDesconto = precoComDesconto;
-    }
+    public int getCategoria() { return categoria; }
+    public void setCategoria(int categoria) { this.categoria = categoria; }
 }
