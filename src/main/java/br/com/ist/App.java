@@ -1,5 +1,8 @@
 package br.com.ist;
 
+import br.com.ist.enums.CategoriaCardapio;
+import br.com.ist.model.ItemCardapio;
+
 /**
  * Hello world!
  *
@@ -31,21 +34,21 @@ public class App
 		long id1 = 1L;
 		item1.setId(id1);
 
-		int categoria1 = 4;
+		CategoriaCardapio categoria1;
+		categoria1 = CategoriaCardapio.BEBIDAS;
 		item1.setCategoria(categoria1);
 
 		System.out.println(
 				"######Cardápio 1######\n" +
+				"Id: " + item1.getId() + "\n" +
 				"Nome: " + item1.getNome() + "\n" +
-				"Categoria: " + item1.mostrarCategoria() + "\n" +
+				"Categoria: " + categoria1 + "\n" +
 				"Descrição: " + item1.getDescricao() + "\n" +
 				"Em promoção: " + item1.isEmPromocao() + "\n" +
 				"Preço: R$ " + item1.getPreco() + "\n" +
 				"Preço com Desconto: R$ " + item1.getPrecoComDesconto() + "\n" +
 				"Valor do desconto: R$" + String.format("%.2f",(preco1 - precoComDesconto1)) + "\n" +
 				"Desconto aplicado: " + String.format("%.2f", item1.calcularPorcentagemDesconto() * 100) + "%\n" +
-				"Id: " + item1.getId() + "\n" +
-				"Categoria: " + item1.getCategoria() + "\n" +
 				"------------------"
 		);
 
@@ -75,21 +78,20 @@ public class App
 		id2 = 2L;
 		item2.setId(id2);
 
-		int categoria2;
-		categoria2 = 2;
+		CategoriaCardapio categoria2;
+		categoria2 = CategoriaCardapio.PRATOS_PRINCIPAIS;
 		item2.setCategoria(categoria2);
 		System.out.println(
 				"######Cardápio 2######\n" +
+						"Id: " + item2.getId() + "\n" +
 						"Nome: " + item2.getNome() + "\n" +
-						"Categoria: " + item2.mostrarCategoria() + "\n" +
+						"Categoria: " + categoria2 + "\n" +
 						"Descrição: " + item2.getDescricao() + "\n" +
 						"Em promoção: " + item2.isEmPromocao() + "\n" +
 						"Preço: R$ " + item2.getPreco() + "\n" +
 						"Valor do desconto: R$" + String.format("%.2f",(preco2 - precoComDesconto2)) + "\n" +
 						"Preço com Desconto: R$ " + item2.getPrecoComDesconto() + "\n" +
-						"Desconto aplicado: " + String.format("%.2f", item2.calcularPorcentagemDesconto() * 100) + "%\n" +
-						"Id: " + item2.getId() + "\n" +
-						"Categoria: " + item2.getCategoria() + "\n"
+						"Desconto aplicado: " + String.format("%.2f", item2.calcularPorcentagemDesconto() * 100) + "%\n"
 		);
 	}
 }
